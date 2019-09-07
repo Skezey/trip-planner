@@ -30,7 +30,7 @@ class AddressesController < ApplicationController
   end
   def destroy
     @address.destroy
-    redirect_to location_path(@location)
+    redirect_to location_addresses_path(@location)
   end
   private
     def set_location

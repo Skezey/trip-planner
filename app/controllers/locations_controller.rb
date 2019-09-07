@@ -7,6 +7,8 @@ class LocationsController < ApplicationController
   end
 
   def show
+    set_address
+
   end
 
   def new
@@ -49,6 +51,11 @@ class LocationsController < ApplicationController
    def set_location
      @location = Location.find(params[:id])
      # this grabs which id you are currently selecting
+   end
+
+   def set_address
+    @address = @location.address
+
    end
 
    def set_trip
