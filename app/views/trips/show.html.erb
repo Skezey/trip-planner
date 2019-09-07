@@ -1,2 +1,18 @@
-<h1>Trips#show</h1>
-<p>Find me in app/views/trips/show.html.erb</p>
+<h1><%= @trip.name %> Info</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>location Name</td>
+      <td>Days Spent at Location</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trip.locations.each do |location| %>
+    <tr>
+      <td><%= link_to location.name, location_path(location) %></td>
+      <td><%= location.days %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
