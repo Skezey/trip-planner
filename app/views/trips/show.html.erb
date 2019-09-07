@@ -1,5 +1,6 @@
 <div class='col-md-12'>
 <h1><%= @trip.name %> Info</h1>
+<%= link_to 'Add Location', new_trip_location_path(@trip), class: 'btn btn-primary' %>
 <table class='table'>
   <thead>
     <tr>
