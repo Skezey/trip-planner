@@ -1,10 +1,8 @@
 class AddressesController < ApplicationController
-<<<<<<< HEAD
-=======
+
   before_action :set_location
   before_action :set_address, only: [:show, :edit, :update, :destroy]
->>>>>>> 9474c9492f5d2af0bf89d9fb9af094df58d9d548
-  
+
   def index
     @addresses = @location.addresses
   end
