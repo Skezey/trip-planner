@@ -1,4 +1,4 @@
-<h1>Location</h1>
+<h1><%= @location.name%> Address</h1>
 
 <table>
   <thead>
@@ -13,8 +13,7 @@
         <td data-label="City"><%= @location.address.city %></td>
         <td data-label="State"><%= @location.address.state %></td>
         <td data-label="Zip"><%= @location.address.zip %></td>
-        <td><%= link_to "Edit", edit_location_address_path(@location.address) %></td>
-        <td><%= link_to "Delete", location_path(@location.address), method: :delete%></td>
+        <td><%= link_to 'View Address', location_addresses_path(@location) %></td>
       </tr>
   </tbody>
 </table>

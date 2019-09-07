@@ -30,14 +30,14 @@ class AddressesController < ApplicationController
   end
   def destroy
     @address.destroy
-    redirect_to location_address_path
+    redirect_to location_path(@location)
   end
   private
     def set_location
       @location = Location.find(params[:location_id])
     end
     def set_address
-      @address = Address.find(params[:address_id])
+      @address = Address.find(params[:id])
     end
     def address_params
       params.require(:address).permit(:street, :city, :state, :zip, :location_id)
