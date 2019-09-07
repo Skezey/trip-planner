@@ -31,4 +31,7 @@ date = Faker::Date.between(from: 1.year.ago, to: 1.year.from_now)
 end
 
 puts 'Date seeded'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9059da9c04a82774a9acf818bfd1d2e72fbb4adc
