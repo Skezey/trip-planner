@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'trip#index'
-  
+  root 'trips#index'
+
   resources :trip
 
   resources :location do
