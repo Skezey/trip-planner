@@ -1,6 +1,4 @@
 <h1>Address</h1>
 <ul>
-  <% @addresses.each do |address| %>
-    <li><%= link_to address.name, [@location, address] %></li>
-  <% end %>
+  <li><%= link_to @address.street, [@location, @address] %></li>
 </ul>
