@@ -1,2 +1,22 @@
-<h1>Locations#show</h1>
-<p>Find me in app/views/locations/show.html.erb</p>
+<h1>Location</h1>
+
+<table>
+  <thead>
+    <tr><th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+  </tr></thead>
+  <tbody>
+    <% @location.address do |a| %>
+      <tr>
+        <td data-label="Street"><%= a.street %></td>
+        <td data-label="City"><%= a.city %></td>
+        <td data-label="State"><%= a.state %></td>
+        <td data-label="Zip"><%= a.zip %></td>
+        <td><%= link_to "Edit"%></td>
+        <td><%= link_to "Delete"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,2 +1,15 @@
-<h1>Locations#new</h1>
-<p>Find me in app/views/locations/new.html.erb</p>
+<h1>New Location</h1>
+
+<%= form_with(model: @location, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "name" %>
+  </div>
+  <div class="field">
+    <div class="field">
+    <%= f.label :days %>
+    <%= f.text_field :days, required: true, placeholder: "days" %>
+  </div>
+  <div class="field">
+<%= f.submit nil, class: "i green button inverted"%>
+<% end %>
