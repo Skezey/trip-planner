@@ -1,12 +1,12 @@
-<h1>Trips</h1>
-<%= link_to "Log new trip", new_trip_path, class: 'btn btn-primary' %>
-<table>
+<div class='container'>
+<h1 class='trip-index-header'>Trips</h1>
+<%= link_to "Log new trip", new_trip_path, class: 'btn btn-primary center' %>
+<table class='trips-index-table'>
   <thead>
     <tr>
       <td><Trip Name</td>
       <td>Trip Start</td>
       <td>Trip End</td>
-      <td>Action</td>
     </tr>
   </thead>
   <tbody>
@@ -15,9 +15,8 @@
         <td><%=link_to trip.name, trip_path(trip) %></td>
         <td><%= trip.start_date %></td>
         <td><%= trip.end_date %></td>
-        <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-        <td><%= link_to 'Delete', trip_path(trip), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
