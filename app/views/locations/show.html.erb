@@ -8,15 +8,13 @@
     <th>Zip</th>
   </tr></thead>
   <tbody>
-    <% @location.address do |a| %>
       <tr>
-        <td data-label="Street"><%= a.street %></td>
-        <td data-label="City"><%= a.city %></td>
-        <td data-label="State"><%= a.state %></td>
-        <td data-label="Zip"><%= a.zip %></td>
-        <td><%= link_to "Edit"%></td>
-        <td><%= link_to "Delete"%></td>
+        <td data-label="Street"><%= @location.address.street %></td>
+        <td data-label="City"><%= @location.address.city %></td>
+        <td data-label="State"><%= @location.address.state %></td>
+        <td data-label="Zip"><%= @location.address.zip %></td>
+        <td><%= link_to "Edit", edit_location_address_path(@location.address) %></td>
+        <td><%= link_to "Delete", location_path(@location.address), method: :delete%></td>
       </tr>
-    <% end %>
   </tbody>
 </table>
