@@ -5,6 +5,7 @@
     <tr>
       <td>location Name</td>
       <td>Days Spent</td>
+      <td>Action</td>
     </tr>
   </thead>
   <tbody>
@@ -12,7 +13,10 @@
     <tr>
       <td><%= link_to location.name, location_path(location) %></td>
       <td><%= location.days %></td>
+      <td><%= link_to "Edit", edit_location_path(location)%> <%= link_to "Delete", location_path(location), method: :delete%></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to 'Edit', edit_trip_path, class: 'btn btn-warning' %>
+<%= link_to 'Delete', trip_path, method: :delete, class: 'btn btn-danger' %>
