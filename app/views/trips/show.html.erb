@@ -1,6 +1,6 @@
+<div class='col-md-12'>
 <h1><%= @trip.name %> Info</h1>
-
-<table>
+<table class='table'>
   <thead>
     <tr>
       <td>location Name</td>
@@ -13,10 +13,11 @@
     <tr>
       <td><%= link_to location.name, location_path(location) %></td>
       <td><%= location.days %></td>
-      <td><%= link_to "Edit", edit_location_path(location)%> <%= link_to "Delete", location_path(location), method: :delete%></td>
+      <td><%= link_to "Edit", edit_location_path(location), class: 'btn btn-warning' %> <%= link_to "Delete", location_path(location), method: :delete, class: 'btn btn-danger'%></td>
     </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Edit', edit_trip_path, class: 'btn btn-warning' %>
-<%= link_to 'Delete', trip_path, method: :delete, class: 'btn btn-danger' %>
+
+<%= link_to "back", trips_path %>
+</div>

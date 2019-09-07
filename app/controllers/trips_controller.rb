@@ -2,7 +2,7 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
   before_action
   def index
-    @trips = Trip.all
+    @trips = Trip.all.order(start_date: :asc)
   end
 
   def show
@@ -15,7 +15,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
 
-    @trip.save ? (redirect_to trip_path) : (render :new)
+    @trip.save ? (redirect_to trips_path) : (render :new)
   end
 
 
@@ -23,12 +23,12 @@ class TripsController < ApplicationController
   end
 
   def update
-    @trip.update(trip_params) ? (redirect_to trip_path) : (render :edit)
+    @trip.update(trip_params) ? (redirect_to trips_path) : (render :edit)
   end
 
   def destroy
     @trip.destroy
-    redirect_to trip_index_path
+    redirect_to trips_path
   end
 
   private
