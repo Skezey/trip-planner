@@ -1,6 +1,6 @@
 
 
-<%= form_with(model: @location, local: true) do |f| %>
+<%= form_with(model: [@trip, @location], local: true) do |f| %>
 
 <h1><%= @location.id ? ('Edit Location') : ('Create Location') %></h1>
   <div class="field">

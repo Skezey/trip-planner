@@ -18,7 +18,7 @@ class LocationsController < ApplicationController
   def create
     @location = @trip.locations.new(location_params)
     if @location.save
-      redirect_to trip_path(@trip)
+      redirect_to @trip
     else
       render :new
     end
@@ -45,7 +45,7 @@ class LocationsController < ApplicationController
 
    private
    def location_params
-     params.require(:location).permit(:name, :days)
+     params.require(:location).permit(:name, :days, :trip_id)
    end
 
    def set_location
