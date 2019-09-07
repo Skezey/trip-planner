@@ -1,4 +1,4 @@
 <h1>Address</h1>
 <ul>
-  <li><%= link_to @address.street, [@location, @address] %></li>
+  <li><%= link_to @address.street, location_address_path(@location, @address.id) %></li>
 </ul>
