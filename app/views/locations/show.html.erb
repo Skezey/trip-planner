@@ -1,11 +1,12 @@
+<div class='col-md-12'>
 <h1><%= @location.name%> Address</h1>
-
-<table>
+<table class='table'>
   <thead>
     <tr><th>Street</th>
     <th>City</th>
     <th>State</th>
     <th>Zip</th>
+    <th>Action</th>
   </tr></thead>
   <tbody>
       <tr>
@@ -13,7 +14,11 @@
         <td data-label="City"><%= @location.address.city %></td>
         <td data-label="State"><%= @location.address.state %></td>
         <td data-label="Zip"><%= @location.address.zip %></td>
-        <td><%= link_to 'View Address', location_addresses_path(@location) %></td>
+        <td><%= link_to "Edit", edit_location_address_path([@location, @address]), class: 'btn btn-warning' %> <%= link_to "Delete", [@location, @address], method: :delete, class: 'btn btn-danger'%></td>
       </tr>
   </tbody>
 </table>
+<br/>
+<br/>
+<br/>
+
